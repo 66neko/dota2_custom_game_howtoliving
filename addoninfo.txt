@@ -1,0 +1,10 @@
+"AddonInfo"
+{
+	"TeamCount"		"5"
+	maps			"living_new_game"
+	"IsPlayable"	"1"
+	"living_game"
+	{
+					"MaxPlayers"                    "5"
+	}
+}

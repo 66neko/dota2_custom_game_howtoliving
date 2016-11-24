@@ -1,0 +1,8 @@
+living_new_game
+{
+	material materials/overviews/living_new_game.vmat
+	pos_x -8192
+	pos_y 8192
+	scale 16.000
+}
+

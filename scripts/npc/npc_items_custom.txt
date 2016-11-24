@@ -1,0 +1,2372 @@
+"DOTAAbilities"
+{
+	//=================================================================================================================
+	//物品模版-速度之靴
+	"item_boots_datadriven"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_datadriven"
+		"ID"							"2000"  //Valve's version of this item uses the ID "29".
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/boots_of_speed.mdl"
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_boots"
+		"ItemShareability"         "ITEM_FULLY_SHAREABLE"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"450"
+		"ItemShopTags"					"move_speed"
+		"ItemQuality"					"component"
+		"ItemAliases"					"boots of speed"
+		"SideShop"						"0"
+		"SecretShop"					"0"
+		"ItemPurchasable"				"0" //不可被购买
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_movement_speed"			"50"
+			}
+		}
+	
+		"Modifiers"
+		{
+			"modifier_item_boots_datadriven"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
+			
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_UNIQUE"		"%bonus_movement_speed"
+				}
+			}
+		}
+	}
+	//物品-武器-减防-暗灭lv3
+	"item_weapon_desolator_lv3"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"2001"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_desolator"
+		"ItemCost"						"200"
+		"ItemShopTags"					"damage;unique"
+		"ItemQuality"					"artifact"
+		"ItemAliases"					"desolator"
+		"SideShop"				"1"
+		"ItemPurchasable"				"0" //不可被购买
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ItemShareability"         "ITEM_FULLY_SHAREABLE"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"100"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"corruption_armor"		"-20"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"corruption_duration"	"15.0"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_item_desolator_datadriven"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
+			
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE"						"%bonus_damage"
+				}
+			
+				"Orb"
+				{
+					"Priority"				"DOTA_ORB_PRIORITY_ITEM"
+					"ProjectileName"		"particles/items_fx/desolator_projectile.vpcf"
+					"CastAttack"			"0"
+				}
+
+				"OnOrbImpact"
+				{
+				"ApplyModifier"
+					{
+						"Target"			"TARGET"
+						"ModifierName"		"modifier_item_desolator_datadriven_corruption"
+					}
+				
+					"FireSound"
+					{
+						"EffectName"		"Item_Desolator.	Target"
+						"Target"			"TARGET"
+					}
+				}
+			}
+			"modifier_item_desolator_datadriven_corruption"
+			{
+				"Duration"				"%corruption_duration"
+				"Passive"				"0"
+				"IsHidden"				"0"
+			
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"		"%corruption_armor"
+				}
+			}
+		}
+	}
+	//物品-武器-减防-暗灭lv3-合成符
+	"item_recipe_weapon_desolator_lv3"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"2003"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"AbilityTextureName"			"item_recipe"
+		"ItemShareability"         "ITEM_FULLY_SHAREABLE"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+	
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_weapon_desolator_lv3"
+		"ItemRequirements"
+		{
+			"01"						"item_desolator;item_mithril_hammer;item_ultimate_orb"
+		}
+	}
+	//物品-武器-分裂-狂战斧lv2
+	"item_weapon_bfury_lv2"
+	{
+		"BaseClass"				"item_bfury"
+		"ID"					"2004"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"SideShop"				"0"
+		"SecretShop"			"0"
+		"ItemPurchasable"				"0" //不可被购买
+		"ItemCost"				"200"
+		"ItemShareability"      "ITEM_FULLY_SHAREABLE"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_damage"			"20"
+			}
+			"02"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"bonus_health_regen"			"0"
+			}
+			"03"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"bonus_mana_regen_percentage"	"0"
+			}
+			"04"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"cleave_damage_percent"			"20"
+			}
+			"05"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"cleave_radius"					"250"
+			}
+		}
+	}
+	//物品-武器-分裂-狂战斧lv3
+	"item_weapon_bfury_lv3"
+	{
+		"BaseClass"				"item_bfury"
+		"ID"					"2005"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"SideShop"				"0"
+		"SecretShop"			"0"
+		"ItemPurchasable"				"0" //不可被购买
+		"ItemCost"				"200"
+		"ItemShareability"      "ITEM_FULLY_SHAREABLE"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_damage"			"120"
+			}
+			"02"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"bonus_health_regen"			"0"
+			}
+			"03"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"bonus_mana_regen_percentage"	"0"
+			}
+			"04"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"cleave_damage_percent"			"33"
+			}
+			"05"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"cleave_radius"					"250"
+			}
+		}
+	}
+	//物品-武器-分裂-狂战斧lv2-合成符
+	"item_recipe_weapon_bfury_lv2"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"2006"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"AbilityTextureName"			"item_recipe"
+		"ItemShareability"         "ITEM_FULLY_SHAREABLE"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+	
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_weapon_bfury_lv2"
+		"ItemRequirements"
+		{
+			"01"						"item_claymore;item_claymore"
+		}
+	}
+	//物品-武器-分裂-狂战斧lv3-合成符
+	"item_recipe_weapon_bfury_lv3"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"2007"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"AbilityTextureName"			"item_recipe"
+		"ItemShareability"         "ITEM_FULLY_SHAREABLE"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+	
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_weapon_bfury_lv3"
+		"ItemRequirements"
+		{
+			"01"						"item_weapon_bfury_lv2;item_claymore;item_ultimate_orb"
+		}
+	}
+	//物品-武器-多重攻击-标枪lv2
+	"item_weapon_eaglesong_lv2"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"2008"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_eagle"
+		"ItemCost"						"200"
+		"ItemQuality"					"artifact"
+		"ItemPurchasable"				"0" //不可被购买
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ItemShareability"         "ITEM_FULLY_SHAREABLE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitTargetFlag"			"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+		"precache"
+		{
+			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_medusa.vsndevts"
+			"particle"			"particles/units/heroes/hero_medusa/medusa_bow_split_shot_cast.vpcf"
+			"particle"			"particles/units/heroes/hero_medusa/medusa_base_attack.vpcf"
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_modifier"		"0"
+			}
+			"02"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"damage_modifier_tooltip"		"100"
+			}
+			"03"
+			{	
+				"var_type"					"FIELD_INTEGER"
+				"arrow_count"				"3"
+			}
+			"04"
+			{	
+				"var_type"					"FIELD_INTEGER"
+				"total_arrow_count"				"4"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"range"					"600"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"projectile_speed"		"1200"
+			}
+			"07"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_damage"			"20"
+			}
+		}
+		"OnProjectileHitUnit"
+		{
+			"DeleteOnHit"	"1"
+			"FireSound"
+			{
+				"EffectName"	"Hero_Medusa.AttackSplit"
+				"Target" 		"TARGET"
+			}
+			"RunScript"
+			{
+				"ScriptFile"	"heroes/hero_medusa/split_shot.lua"
+				"Function"		"SplitShotDamage"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_split_shot_datadriven"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"OnAttack"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/hero_medusa/split_shot.lua"
+						"Function"		"SplitShotLaunch"
+						"split_shot_projectile"	"particles/units/heroes/hero_medusa/medusa_base_attack.vpcf"
+					}
+				}
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE" "%damage_modifier" 
+				}
+			}
+			"modifier_item_bonus_damage"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
+			
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE"						"%bonus_damage"
+				}
+			}
+		}
+	}
+	//物品-武器-多重攻击-标枪lv3
+	"item_weapon_eaglesong_lv3"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"2009"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_eagle"
+		"ItemCost"						"200"
+		"ItemQuality"					"artifact"
+		"ItemPurchasable"				"0" //不可被购买
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ItemShareability"         "ITEM_FULLY_SHAREABLE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitTargetFlag"			"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_modifier"		"0"
+			}
+			"02"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"damage_modifier_tooltip"		"100"
+			}
+			"03"
+			{	
+				"var_type"					"FIELD_INTEGER"
+				"arrow_count"				"7"
+			}
+			"04"
+			{	
+				"var_type"					"FIELD_INTEGER"
+				"total_arrow_count"				"8"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"range"					"600"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"projectile_speed"		"1200"
+			}
+			"07"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_damage"			"100"
+			}
+		}
+		"OnProjectileHitUnit"
+		{
+			"DeleteOnHit"	"1"
+			"FireSound"
+			{
+				"EffectName"	"Hero_Medusa.AttackSplit"
+				"Target" 		"TARGET"
+			}
+			"RunScript"
+			{
+				"ScriptFile"	"heroes/hero_medusa/split_shot.lua"
+				"Function"		"SplitShotDamage"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_split_shot_datadriven"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"OnAttack"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/hero_medusa/split_shot.lua"
+						"Function"		"SplitShotLaunch"
+						"split_shot_projectile"	"particles/units/heroes/hero_medusa/medusa_base_attack.vpcf"
+					}
+				}
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE" "%damage_modifier" 
+				}
+			}
+			"modifier_item_bonus_damage"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
+			
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE"						"%bonus_damage"
+				}
+			}
+		}
+	}
+	//物品-武器-多重攻击-标枪lv2-合成符
+	"item_recipe_weapon_eaglesong_lv2"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"2010"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"AbilityTextureName"			"item_recipe"
+		"ItemShareability"         "ITEM_FULLY_SHAREABLE"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+	
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_weapon_eaglesong_lv2"
+		"ItemRequirements"
+		{
+			"01"						"item_javelin;item_javelin"
+		}
+	}
+	//物品-武器-多重攻击-标枪lv3-合成符
+	"item_recipe_weapon_eaglesong_lv3"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"2011"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"AbilityTextureName"			"item_recipe"
+		"ItemShareability"         "ITEM_FULLY_SHAREABLE"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+	
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_weapon_eaglesong_lv3"
+		"ItemRequirements"
+		{
+			"01"						"item_weapon_eaglesong_lv2;item_javelin;item_ultimate_orb"
+		}
+	}
+	//物品-武器-法杖-魔力法杖lv1
+	"item_weapon_wizardry_lv1"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_datadriven"
+		"ID"							"2012"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_staff_of_wizardry"
+		"ItemShareability"         "ITEM_FULLY_SHAREABLE"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"200"
+		"ItemQuality"					"component"
+		"SideShop"						"0"
+		"SecretShop"					"0"
+		"ItemPurchasable"				"0" //不可被购买
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_intelligence"			"15"
+			}
+		}
+	
+		"Modifiers"
+		{
+			"modifier_item_weapon_wizardry"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
+			
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%bonus_intelligence"
+				}
+			}
+		}
+	}
+	//物品-武器-法杖-魔力法杖lv2
+	"item_weapon_wizardry_lv2"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_datadriven"
+		"ID"							"2013"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_oblivion_staff"
+		"ItemShareability"         "ITEM_FULLY_SHAREABLE"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"200"
+		"ItemQuality"					"component"
+		"SideShop"						"0"
+		"SecretShop"					"0"
+		"ItemPurchasable"				"0" //不可被购买
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_intelligence"			"30"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_mana_regen_percentage"	"225"
+			}
+		}
+	
+		"Modifiers"
+		{
+			"modifier_item_weapon_wizardry"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
+			
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%bonus_intelligence"
+					"MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE"			"%bonus_mana_regen_percentage"
+				}
+			}
+		}
+	}
+	//物品-武器-法杖-魔力法杖lv3
+	"item_weapon_wizardry_lv3"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_datadriven"
+		"ID"							"2014"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_mystic_staff"
+		"ItemShareability"         "ITEM_FULLY_SHAREABLE"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"200"
+		"ItemQuality"					"component"
+		"SideShop"						"0"
+		"SecretShop"					"0"
+		"ItemPurchasable"				"0" //不可被购买
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_intelligence"			"30"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_mana_regen_percentage"	"500"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_all_stats"		"40"
+			}
+		}
+	
+		"Modifiers"
+		{
+			"modifier_item_weapon_wizardry"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
+			
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%bonus_intelligence + %bonus_all_stats"
+					"MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE"			"%bonus_mana_regen_percentage"
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%bonus_all_stats"
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"			"%bonus_all_stats"
+				}
+			}
+		}
+	}
+	//物品-武器-法杖-魔力法杖lv2-合成符
+	"item_recipe_weapon_wizardry_lv2"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"2015"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"AbilityTextureName"			"item_recipe"
+		"ItemShareability"         "ITEM_FULLY_SHAREABLE"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+	
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_weapon_wizardry_lv2"
+		"ItemRequirements"
+		{
+			"01"						"item_weapon_wizardry_lv1;item_weapon_wizardry_lv1"
+		}
+	}
+	//物品-武器-法杖-魔力法杖lv3-合成符
+	"item_recipe_weapon_wizardry_lv3"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"2016"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"AbilityTextureName"			"item_recipe"
+		"ItemShareability"         "ITEM_FULLY_SHAREABLE"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+	
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_weapon_wizardry_lv3"
+		"ItemRequirements"
+		{
+			"01"						"item_weapon_wizardry_lv2;item_weapon_wizardry_lv1;item_ultimate_orb"
+		}
+	}
+	//物品-护甲-通用-锁子甲lv1
+	"item_armor_Chainmail_lv1"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_datadriven"
+		"ID"							"2017"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_chainmail"
+		"ItemShareability"         "ITEM_FULLY_SHAREABLE"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"200"
+		"ItemQuality"					"component"
+		"SideShop"						"0"
+		"SecretShop"					"0"
+		"ItemPurchasable"				"0" //不可被购买
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_armor"			"7"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_item_weapon_wizardry"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"		"%bonus_armor"
+				}
+			}
+		}
+	}
+	//物品-护甲-闪避-闪避护符lv1
+	"item_armor_evasion_lv1"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_datadriven"
+		"ID"							"2018"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_talisman_of_evasion"
+		"ItemShareability"         "ITEM_FULLY_SHAREABLE"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"200"
+		"ItemQuality"					"component"
+		"SideShop"						"0"
+		"SecretShop"					"0"
+		"ItemPurchasable"				"0" //不可被购买
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_evasion"			"15"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_item_weapon_wizardry"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_EVASION_CONSTANT"		"%bonus_evasion"
+				}
+			}
+		}
+	}
+	//物品-护甲-闪避-炎阳纹章lv2
+	"item_armor_crest_lv2"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_datadriven"
+		"ID"							"2019"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_solar_crest"
+		"ItemShareability"         "ITEM_FULLY_SHAREABLE"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"200"
+		"ItemQuality"					"component"
+		"SideShop"						"0"
+		"SecretShop"					"0"
+		"ItemPurchasable"				"0" //不可被购买
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_evasion"			"25"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_armor"			"10"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_item_weapon_wizardry"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_EVASION_CONSTANT"		"%bonus_evasion"
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"		"%bonus_armor"
+				}
+			}
+		}
+	}
+	//物品-护甲-闪避-炎阳纹章lv3
+	"item_armor_crest_lv3"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_datadriven"
+		"ID"							"2020"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_solar_crest"
+		"ItemShareability"         "ITEM_FULLY_SHAREABLE"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"200"
+		"ItemQuality"					"component"
+		"SideShop"						"0"
+		"SecretShop"					"0"
+		"ItemPurchasable"				"0" //不可被购买
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_evasion"			"30"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_armor"			"20"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_item_weapon_wizardry"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_EVASION_CONSTANT"		"%bonus_evasion"
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"		"%bonus_armor"
+				}
+			}
+		}
+	}
+	//物品-护甲-闪避-炎阳纹章lv2-合成符
+	"item_recipe_armor_crest_lv2"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"2021"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"AbilityTextureName"			"item_recipe"
+		"ItemShareability"         "ITEM_FULLY_SHAREABLE"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+	
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_armor_crest_lv2"
+		"ItemRequirements"
+		{
+			"01"						"item_armor_Chainmail_lv1;item_armor_evasion_lv1"
+		}
+	}
+	//物品-护甲-闪避-炎阳纹章lv3-合成符
+	"item_recipe_armor_crest_lv3"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"2022"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"AbilityTextureName"			"item_recipe"
+		"ItemShareability"         "ITEM_FULLY_SHAREABLE"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+	
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_armor_crest_lv3"
+		"ItemRequirements"
+		{
+			"01"						"item_armor_crest_lv2;item_armor_evasion_lv1;item_ultimate_orb"
+		}
+	}
+	//物品-护甲-攻速-板甲lv2
+	"item_armor_platemail_lv2"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_datadriven"
+		"ID"							"2023"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_platemail"
+		"ItemShareability"         "ITEM_FULLY_SHAREABLE"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"200"
+		"ItemQuality"					"rare"
+		"SideShop"						"0"
+		"SecretShop"					"0"
+		"ItemPurchasable"				"0" //不可被购买
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_armor"			"16"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_item_weapon_wizardry"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"		"%bonus_armor"
+				}
+			}
+		}
+	}
+	//物品-护甲-攻速-强袭胸甲lv3
+	"item_armor_assault_lv3"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_datadriven"
+		"ID"							"2024"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_assault"
+		"ItemShareability"         "ITEM_FULLY_SHAREABLE"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"200"
+		"ItemQuality"					"rare"
+		"SideShop"						"0"
+		"SecretShop"					"0"
+		"ItemPurchasable"				"0" //不可被购买
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_armor"			"16"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_attack_speed"	"50"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_item_weapon_wizardry"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"		"%bonus_armor"
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"		"%bonus_attack_speed"
+				}
+			}
+		}
+	}
+	//物品-护甲-攻速-板甲lv2-合成符
+	"item_recipe_armor_platemail_lv2"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"2025"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"AbilityTextureName"			"item_recipe"
+		"ItemShareability"         "ITEM_FULLY_SHAREABLE"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+	
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_armor_platemail_lv2"
+		"ItemRequirements"
+		{
+			"01"						"item_armor_Chainmail_lv1;item_armor_Chainmail_lv1"
+		}
+	}
+	//物品-护甲-攻速-强袭胸甲lv3-合成符
+	"item_recipe_armor_assault_lv3"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"2026"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"AbilityTextureName"			"item_recipe"
+		"ItemShareability"         "ITEM_FULLY_SHAREABLE"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+	
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_armor_assault_lv3"
+		"ItemRequirements"
+		{
+			"01"						"item_armor_platemail_lv2;item_armor_Chainmail_lv1;item_ultimate_orb"
+		}
+	}
+	//物品-头盔-回复-魔抗斗篷lv1
+	"item_armor_cloak_lv1"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_datadriven"
+		"ID"							"2027"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_cloak"
+		"ItemShareability"         "ITEM_FULLY_SHAREABLE"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"200"
+		"ItemQuality"					"common"
+		"SideShop"						"0"
+		"SecretShop"					"0"
+		"ItemPurchasable"				"0" //不可被购买
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_health_regen"	"6"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_item_weapon_wizardry"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"		"%bonus_health_regen"
+				}
+			}
+		}
+	}
+	//物品-头盔-回复-恢复头巾lv2
+	"item_armor_headdress_lv2"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_datadriven"
+		"ID"							"2028"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_headdress"
+		"ItemShareability"         "ITEM_FULLY_SHAREABLE"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"200"
+		"ItemQuality"					"common"
+		"SideShop"						"0"
+		"SecretShop"					"0"
+		"ItemPurchasable"				"0" //不可被购买
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_health_regen"	"12"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_all_stats"		"20"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_item_weapon_wizardry"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"		"%bonus_health_regen"
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%bonus_all_stats"
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%bonus_all_stats"
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"			"%bonus_all_stats"
+				}
+			}
+		}
+	}
+	//物品-头盔-回复-挑战头巾lv3
+	"item_armor_defiance_lv3"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_datadriven"
+		"ID"							"2029"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_hood_of_defiance"
+		"ItemShareability"         "ITEM_FULLY_SHAREABLE"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"200"
+		"ItemQuality"					"rare"
+		"SideShop"						"0"
+		"SecretShop"					"0"
+		"ItemPurchasable"				"0" //不可被购买
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_health_regen"	"35"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_all_stats"		"40"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_item_weapon_wizardry"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"		"%bonus_health_regen"
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%bonus_all_stats"
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%bonus_all_stats"
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"			"%bonus_all_stats"
+				}
+			}
+		}
+	}
+	//物品-头盔-回复-恢复头巾lv2-合成符
+	"item_recipe_armor_headdress_lv2"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"2030"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"AbilityTextureName"			"item_recipe"
+		"ItemShareability"         "ITEM_FULLY_SHAREABLE"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+	
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_armor_headdress_lv2"
+		"ItemRequirements"
+		{
+			"01"						"item_armor_cloak_lv1;item_armor_cloak_lv1"
+		}
+	}
+	//物品-头盔-回复-恢复头巾lv3-合成符
+	"item_recipe_armor_defiance_lv3"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"2031"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"AbilityTextureName"			"item_recipe"
+		"ItemShareability"         "ITEM_FULLY_SHAREABLE"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+	
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_armor_defiance_lv3"
+		"ItemRequirements"
+		{
+			"01"						"item_armor_headdress_lv2;item_armor_cloak_lv1;item_ultimate_orb"
+		}
+	}
+	//物品-头盔-吸血-吸血面具lv1
+	"item_armor_lifesteal_lv1"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_datadriven"
+		"ID"							"2032"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_lifesteal"
+		"ItemShareability"         "ITEM_FULLY_SHAREABLE"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"200"
+		"ItemQuality"					"rare"
+		"SideShop"						"0"
+		"SecretShop"					"0"
+		"ItemPurchasable"				"0" //不可被购买
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_armor"			"0"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"lifesteal_percent"		"10"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_item_weapon_wizardry"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"		"%bonus_armor"
+				}
+			}
+			"modifier_item_lifesteal"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+				"OnDealDamage"
+				{
+					"Lifesteal"
+					{
+						"Target"			"ATTACKER"
+						"LifestealPercent"	"%lifesteal_percent"
+					}
+				}
+			}
+		}
+	}
+	//物品-头盔-吸血-吸血面具lv2
+	"item_armor_lifesteal_lv2"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_datadriven"
+		"ID"							"2033"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_helm_of_iron_will"
+		"ItemShareability"         "ITEM_FULLY_SHAREABLE"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"200"
+		"ItemQuality"					"rare"
+		"SideShop"						"0"
+		"SecretShop"					"0"
+		"ItemPurchasable"				"0" //不可被购买
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_armor"			"5"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"lifesteal_percent"		"15"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_item_weapon_wizardry"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"		"%bonus_armor"
+				}
+			}
+			"modifier_item_lifesteal"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+				"OnDealDamage"
+				{
+					"Lifesteal"
+					{
+						"Target"			"ATTACKER"
+						"LifestealPercent"	"%lifesteal_percent"
+					}
+				}
+			}
+		}
+	}
+	//物品-头盔-吸血-吸血面具lv3
+	"item_armor_lifesteal_lv3"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_datadriven"
+		"ID"							"2034"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_helm_of_the_dominator"
+		"ItemShareability"         "ITEM_FULLY_SHAREABLE"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"200"
+		"ItemQuality"					"rare"
+		"SideShop"						"0"
+		"SecretShop"					"0"
+		"ItemPurchasable"				"0" //不可被购买
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_armor"			"10"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"lifesteal_percent"		"20"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_item_weapon_wizardry"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"		"%bonus_armor"
+				}
+			}
+			"modifier_item_lifesteal"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+				"OnDealDamage"
+				{
+					"Lifesteal"
+					{
+						"Target"			"ATTACKER"
+						"LifestealPercent"	"%lifesteal_percent"
+					}
+				}
+			}
+		}
+	}
+	//物品-头盔-吸血-吸血面具lv2-合成符
+	"item_recipe_armor_lifesteal_lv2"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"2034"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"AbilityTextureName"			"item_recipe"
+		"ItemShareability"         "ITEM_FULLY_SHAREABLE"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+	
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_armor_lifesteal_lv2"
+		"ItemRequirements"
+		{
+			"01"						"item_armor_lifesteal_lv1;item_armor_lifesteal_lv1"
+		}
+	}
+	//物品-头盔-吸血-吸血面具lv3-合成符
+	"item_recipe_armor_lifesteal_lv3"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"2035"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"AbilityTextureName"			"item_recipe"
+		"ItemShareability"         "ITEM_FULLY_SHAREABLE"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+	
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_armor_lifesteal_lv3"
+		"ItemRequirements"
+		{
+			"01"						"item_armor_lifesteal_lv2;item_armor_lifesteal_lv1;item_ultimate_orb"
+		}
+	}
+	//物品-鞋子-移速属性lv2
+	"item_armor_treads_lv2"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_datadriven"
+		"ID"							"2039"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_power_treads"
+		"ItemShareability"         "ITEM_FULLY_SHAREABLE"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"200"
+		"ItemQuality"					"rare"
+		"SideShop"						"0"
+		"SecretShop"					"0"
+		"ItemPurchasable"				"0" //不可被购买
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_movement_speed"			"40"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_all_stats"		"15"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_item_weapon_wizardry"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_UNIQUE"		"%bonus_movement_speed"
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%bonus_all_stats"
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%bonus_all_stats"
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"			"%bonus_all_stats"
+				}
+			}
+		}
+	}
+	//物品-鞋子-移速属性lv3
+	"item_armor_treads_lv3"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_datadriven"
+		"ID"							"2040"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_power_treads"
+		"ItemShareability"         "ITEM_FULLY_SHAREABLE"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"200"
+		"ItemQuality"					"rare"
+		"SideShop"						"0"
+		"SecretShop"					"0"
+		"ItemPurchasable"				"0" //不可被购买
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_movement_speed"			"50"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_all_stats"		"50"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_item_weapon_wizardry"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_UNIQUE"		"%bonus_movement_speed"
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%bonus_all_stats"
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%bonus_all_stats"
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"			"%bonus_all_stats"
+				}
+			}
+		}
+	}
+	//物品-鞋子-移速属性lv2-合成符
+	"item_recipe_armor_treads_lv2"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"2041"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"AbilityTextureName"			"item_recipe"
+		"ItemShareability"         "ITEM_FULLY_SHAREABLE"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+	
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_armor_treads_lv2"
+		"ItemRequirements"
+		{
+			"01"						"item_boots;item_ultimate_orb"
+		}
+	}
+	//物品-鞋子-移速属性lv3-合成符
+	"item_recipe_armor_treads_lv3"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"2042"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"AbilityTextureName"			"item_recipe"
+		"ItemShareability"         "ITEM_FULLY_SHAREABLE"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+	
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_armor_treads_lv3"
+		"ItemRequirements"
+		{
+			"01"						"item_armor_treads_lv2;item_ultimate_orb;item_ultimate_orb"
+		}
+	}
+	//物品-BOSS-红龙-龙心
+	"item_boss_red_dragon_heart"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_datadriven"
+		"ID"							"2043"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_boss_red_dragon_heart"
+		"ItemShareability"         "ITEM_FULLY_SHAREABLE"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"200"
+		"ItemQuality"					"secret_shop"
+		"SideShop"						"0"
+		"SecretShop"					"0"
+		"ItemPurchasable"				"0" //不可被购买
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_armor"			"0"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_attack_speed"	"20"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_item_weapon_wizardry"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"		"%bonus_armor"
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"		"%bonus_attack_speed"
+				}
+			}
+		}
+	}
+	//物品-神器-红龙boss-红龙之剑
+	"item_boss_red_dragon_sword"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_datadriven"
+		"ID"							"2044" 
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_boss_red_dragon_sword"
+		"ItemShareability"         "ITEM_FULLY_SHAREABLE"
+		// Stats		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"35.0"
+		"AbilityManaCost"				"75"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"200"
+		"ItemQuality"					"artifact"
+		"SideShop"						"0"
+		"SecretShop"					"0"
+		"ItemPurchasable"				"0" //不可被购买
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"										"FIELD_INTEGER"
+				"lifesteal_percent"								"10"
+			}
+			"02"
+			{
+				"var_type"										"FIELD_INTEGER"
+				"berserk_bonus_attack_speed"					"150"
+			}
+			"03"
+			{
+				"var_type"										"FIELD_INTEGER"
+				"berserk_bonus_movement_speed_percentage"		"30"
+			}
+			"04"
+			{
+				"var_type"										"FIELD_INTEGER"
+				"berserk_extra_incoming_damage_percentage"		"30"
+			}
+			"05"
+			{
+				"var_type"										"FIELD_FLOAT"
+				"berserk_duration"								"12.0"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"250"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"corruption_armor"		"-20"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"corruption_duration"	"15.0"
+			}
+			"09"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_attack_speed"	"50"
+			}
+			"10"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_all_stats"		"30"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"ApplyModifier"
+			{
+				"Target"			"CASTER"
+				"ModifierName"		"modifier_item_mask_of_madness_datadriven_berserk"
+			}
+			
+			"FireSound"
+			{
+				"EffectName"		"DOTA_Item.MaskOfMadness.Activate"
+				"Target"			"CASTER"
+			}
+		}
+		
+		"Modifiers"
+		{
+			"modifier_item_boss_red_dragon_sword"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"		"%bonus_attack_speed"
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%bonus_all_stats"
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%bonus_all_stats"
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"			"%bonus_all_stats"
+				}
+			}
+			"modifier_item_mask_of_madness_datadriven"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
+				
+				"Orb"
+				{
+					"Priority"		"DOTA_ORB_PRIORITY_ITEM"
+				}
+	
+				"OnOrbImpact"
+				{
+					"RunScript"
+					{
+						"ScriptFile"			"items/item_mask_of_madness.lua"
+						"Function"				"modifier_item_mask_of_madness_datadriven_on_orb_impact"
+					}
+				}
+			}
+			"modifier_item_mask_of_madness_datadriven_berserk"
+			{
+				"Duration"			"%berserk_duration"
+				"Passive"			"0"
+				"IsHidden"			"0"
+				
+				"EffectName"			"particles/items2_fx/mask_of_madness.vpcf"
+				"EffectAttachType"		"follow_origin"
+					
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"		"%berserk_bonus_movement_speed_percentage"
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"		"%berserk_bonus_attack_speed"
+					"MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE"		"%berserk_extra_incoming_damage_percentage"
+				}
+			}
+			"modifier_item_mask_of_madness_datadriven_lifesteal"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				
+				"OnDealDamage"
+				{
+					"Lifesteal"
+					{
+						"Target"			"ATTACKER"
+						"LifestealPercent"	"%lifesteal_percent"
+					}
+				}
+			}
+			"modifier_item_desolator_datadriven"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
+			
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE"						"%bonus_damage"
+				}
+			
+				"Orb"
+				{
+					"Priority"				"DOTA_ORB_PRIORITY_ITEM"
+					"ProjectileName"		"particles/items_fx/desolator_projectile.vpcf"
+					"CastAttack"			"0"
+				}
+
+				"OnOrbImpact"
+				{
+				"ApplyModifier"
+					{
+						"Target"			"TARGET"
+						"ModifierName"		"modifier_item_desolator_datadriven_corruption"
+					}
+				
+					"FireSound"
+					{
+						"EffectName"		"Item_Desolator.	Target"
+						"Target"			"TARGET"
+					}
+				}
+			}
+			"modifier_item_desolator_datadriven_corruption"
+			{
+				"Duration"				"%corruption_duration"
+				"Passive"				"0"
+				"IsHidden"				"0"
+			
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"		"%corruption_armor"
+				}
+			}
+		}
+	}
+	//物品-神器-红龙boss-红龙之剑-合成符
+	"item_recipe_boss_red_dragon_sword"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"2045"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"AbilityTextureName"			"item_recipe"
+		"ItemShareability"         "ITEM_FULLY_SHAREABLE"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+	
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_boss_red_dragon_sword"
+		"ItemRequirements"
+		{
+			"01"						"item_boss_red_dragon_heart;item_weapon_desolator_lv3;item_ultimate_orb"
+		}
+	}
+	//---------------------------------------------------
+	//------------------2015年8月17日 15:26:03-----------
+	//---------------------------------------------------
+	//基础剑lv1
+	"item_new_sword_base_lv1"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_datadriven"
+		"ID"							"2046"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_new_sword_base_lv1"
+		"ItemShareability"         "ITEM_FULLY_SHAREABLE"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"200"
+		"ItemQuality"					"component"
+		"SideShop"						"1"
+		"SecretShop"					"0"
+		"ItemPurchasable"				"1" //不可被购买
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"10"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_item_new_sword_base"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE"		"%bonus_damage"
+				}
+			}
+		}
+	}
+	//基础剑lv2
+	"item_new_sword_base_lv2"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_datadriven"
+		"ID"							"2047"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_new_sword_base_lv2"
+		"ItemShareability"         "ITEM_FULLY_SHAREABLE"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"500"
+		"ItemQuality"					"component"
+		"SideShop"						"1"
+		"SecretShop"					"0"
+		"ItemPurchasable"				"1" //不可被购买
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"20"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_item_new_sword_base"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE"		"%bonus_damage"
+				}
+			}
+		}
+	}
+	//基础剑lv3
+	"item_new_sword_base_lv3"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_datadriven"
+		"ID"							"2048"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_new_sword_base_lv3"
+		"ItemShareability"         "ITEM_FULLY_SHAREABLE"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"1200"
+		"ItemQuality"					"component"
+		"SideShop"						"1"
+		"SecretShop"					"0"
+		"ItemPurchasable"				"1" //不可被购买
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"40"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_item_new_sword_base"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE"		"%bonus_damage"
+				}
+			}
+		}
+	}
+	//基础剑lv4
+	"item_new_sword_base_lv4"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_datadriven"
+		"ID"							"2049"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_new_sword_base_lv4"
+		"ItemShareability"         "ITEM_FULLY_SHAREABLE"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"2800"
+		"ItemQuality"					"component"
+		"SideShop"						"1"
+		"SecretShop"					"0"
+		"ItemPurchasable"				"1" //不可被购买
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"80"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_item_new_sword_base"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE"		"%bonus_damage"
+				}
+			}
+		}
+	}
+	//基础剑lv5
+	"item_new_sword_base_lv5"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_datadriven"
+		"ID"							"2050"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_new_sword_base_lv5"
+		"ItemShareability"         "ITEM_FULLY_SHAREABLE"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"6400"
+		"ItemQuality"					"component"
+		"SideShop"						"1"
+		"SecretShop"					"0"
+		"ItemPurchasable"				"1" //不可被购买
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"160"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_item_new_sword_base"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE"		"%bonus_damage"
+				}
+			}
+		}
+	}
+	//基础盾lv1
+	"item_new_shields_base_lv1"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_datadriven"
+		"ID"							"2051"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_new_shields_base_lv1"
+		"ItemShareability"         "ITEM_FULLY_SHAREABLE"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"200"
+		"ItemQuality"					"component"
+		"SideShop"						"1"
+		"SecretShop"					"0"
+		"ItemPurchasable"				"1" //不可被购买
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_armor"			"2"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_item_new_sword_base"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"		"%bonus_armor"		
+				}
+			}
+		}
+	}
+	//基础盾lv2
+	"item_new_shields_base_lv2"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_datadriven"
+		"ID"							"2052"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_new_shields_base_lv2"
+		"ItemShareability"         "ITEM_FULLY_SHAREABLE"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"500"
+		"ItemQuality"					"component"
+		"SideShop"						"1"
+		"SecretShop"					"0"
+		"ItemPurchasable"				"1" //不可被购买
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_armor"			"4"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_item_new_sword_base"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"		"%bonus_armor"		
+				}
+			}
+		}
+	}
+	//基础盾lv3
+	"item_new_shields_base_lv3"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_datadriven"
+		"ID"							"2053"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_new_shields_base_lv3"
+		"ItemShareability"         "ITEM_FULLY_SHAREABLE"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"1200"
+		"ItemQuality"					"component"
+		"SideShop"						"1"
+		"SecretShop"					"0"
+		"ItemPurchasable"				"1" //不可被购买
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_armor"			"8"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_item_new_sword_base"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"		"%bonus_armor"		
+				}
+			}
+		}
+	}
+	//基础盾lv4
+	"item_new_shields_base_lv4"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_datadriven"
+		"ID"							"2054"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_new_shields_base_lv4"
+		"ItemShareability"         "ITEM_FULLY_SHAREABLE"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"2800"
+		"ItemQuality"					"component"
+		"SideShop"						"1"
+		"SecretShop"					"0"
+		"ItemPurchasable"				"1" //不可被购买
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_armor"			"16"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_item_new_sword_base"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"		"%bonus_armor"		
+				}
+			}
+		}
+	}
+	//基础盾lv5
+	"item_new_shields_base_lv5"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_datadriven"
+		"ID"							"2055"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_new_shields_base_lv5"
+		"ItemShareability"         "ITEM_FULLY_SHAREABLE"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"6400"
+		"ItemQuality"					"component"
+		"SideShop"						"1"
+		"SecretShop"					"0"
+		"ItemPurchasable"				"1" //不可被购买
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_armor"			"32"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_item_new_sword_base"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"		"%bonus_armor"		
+				}
+			}
+		}
+	}
+}

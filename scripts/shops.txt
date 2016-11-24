@@ -1,0 +1,99 @@
+"dota_shops"
+{
+	"consumables"
+	{
+		"item"		"item_new_sword_base_lv1"
+		"item"		"item_new_sword_base_lv2"
+		"item"		"item_new_sword_base_lv3"
+		"item"		"item_new_sword_base_lv4"
+		"item"		"item_new_sword_base_lv5"
+	}
+
+	"attributes"
+	{
+		"item"		"item_new_shields_base_lv1"
+		"item"		"item_new_shields_base_lv2"
+		"item"		"item_new_shields_base_lv3"
+		"item"		"item_new_shields_base_lv4"
+		"item"		"item_new_shields_base_lv5"
+	}
+
+	"weapons_armor"
+	{
+		
+	}
+			
+	"misc"
+	{
+		
+	}	
+	
+	// Level 1 - Green Recipes
+	"basics"
+	{
+		"item"		"item_desolator"
+		"item"		"item_weapon_desolator_lv3"
+		"item"		"item_weapon_bfury_lv2"
+		"item"		"item_weapon_bfury_lv3"
+		"item"		"item_weapon_eaglesong_lv2"
+		"item"		"item_weapon_eaglesong_lv3"
+		"item"		"item_weapon_wizardry_lv2"
+		"item"		"item_weapon_wizardry_lv3"
+	}
+
+	// Level 2 - Blue Recipes
+	"support"
+	{
+		"item"		"item_travel_boots"
+		"item"		"item_travel_boots_2"
+		"item"		"item_phase_boots"
+		"item"		"item_armor_treads_lv2"
+		"item"		"item_armor_treads_lv3"
+	}
+				
+	"magics"			
+	{
+		"item"		"item_armor_crest_lv2"
+		"item"		"item_armor_crest_lv3"
+		"item"		"item_armor_platemail_lv2"
+		"item"		"item_armor_assault_lv3"
+		"item"		"item_armor_headdress_lv2"
+		"item"		"item_armor_defiance_lv3"
+		"item"		"item_armor_lifesteal_lv2"
+		"item"		"item_armor_lifesteal_lv3"
+	}
+		
+	// Level 3 - Purple Recipes	
+	"defense"
+	{
+		"item"		"item_boss_red_dragon_sword"
+	}
+			
+	"weapons"
+	{
+
+					
+					
+	}
+		
+	// Level 4 - Orange / Orb / Artifacts				
+	"artifacts"
+	{	
+
+	}
+
+	"sideshop1"
+	{
+
+	}
+
+	"sideshop2"
+	{
+
+	}
+	
+	"secretshop"
+	{							
+		"item"		"item_ultimate_orb"
+	}	
+}

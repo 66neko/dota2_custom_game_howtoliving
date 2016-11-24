@@ -1,0 +1,126 @@
+// Dota Heroes File
+// NOTE: This is not for creating new heroes, this is for taking a currently existing hero as a template and overriding
+// the specified key-value combinations.  Use override_hero <hero_to_override> for this.
+"DOTAHeroes"
+{
+	//=================================================================================================================
+	// HERO: Templar Assassin
+	//=================================================================================================================
+	"npc_dota_hero_templar_assassin_template"
+	{
+		"override_hero"				"npc_dota_hero_templar_assassin"			// Hero to override
+		"Ability1"					"templar_assassin_refraction_holdout"		// Ability 1
+		"VisionNighttimeRange"		"1800"										// Range of vision at night time.
+	}
+	//模版-techies 炸弹人
+	"npc_dota_hero_techies_new"
+	{
+		"override_hero"				"npc_dota_hero_techies"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
+		"AttributeBaseStrength"		"30"
+		"AttributeStrengthGain"		"2.4"
+		"AttributeBaseAgility"		"5"
+		//"AttributeAgilityGain" 		"1"
+		"AttributeAgilityGain"		"1"
+		"AttributeBaseIntelligence" "50"
+		"AttributeIntelligenceGain" "5"
+		"MovementSpeed"				"300"
+		"StatusManaRegen"			"17"
+		"Ability2"					"wave_wrad"
+		"Ability3"					"suicide_attack"
+		"Ability4"					"black_chaos"
+		"Ability5"					"antitank_grenade"
+		"Ability6"					"meteor"
+	}
+	//英雄-剑圣
+	"npc_dota_hero_juggernaut_new"
+	{
+		"override_hero"				"npc_dota_hero_juggernaut"
+		"AttackDamageMin"			"1"		// Damage range min.
+		"AttackDamageMax"			"70"		// Damage range max.
+		"AttackRate"				"1.6"
+		"AttributeBaseStrength"		"10"
+		"AttributeStrengthGain"		"1.0"
+		"AttributeBaseAgility"		"20"
+		"AttributeAgilityGain"		"2.0"
+		"AttributeBaseIntelligence" "10"
+		"AttributeIntelligenceGain" "2.0"
+		"MovementSpeed"				"310"
+		"Ability2"					"bounty_hunter_wind_walk"
+		"Ability4"					"naga_siren_mirror_image"
+	}
+	//英雄-斧王
+	"npc_dota_hero_axe_new"
+	{
+		"override_hero"				"npc_dota_hero_axe"
+		"AttackDamageMin"			"30"		// Damage range min.
+		"AttackDamageMax"			"40"		// Damage range max.
+		"AttackRate"				"1.8"
+		"AttributeBaseStrength"		"15"
+		"AttributeStrengthGain"		"2.2"
+		"AttributeBaseAgility"		"12"
+		"AttributeAgilityGain"		"1.3"
+		"AttributeBaseIntelligence" "13"
+		"AttributeIntelligenceGain" "1.5"
+		"MovementSpeed"				"290"
+		"Ability2"					"dragon_knight_dragon_blood"
+		"Ability4"					"tidehunter_ravage"
+	}
+	//英雄-小黑
+	"npc_dota_hero_drow_ranger_new"
+	{
+		"override_hero"				"npc_dota_hero_drow_ranger"
+		"AttackDamageMin"			"23"		// Damage range min.
+		"AttackDamageMax"			"47"		// Damage range max.
+		"AttackRate"				"1.5"
+		"AttributeBaseStrength"		"9"
+		"AttributeStrengthGain"		"1.0"
+		"AttributeBaseAgility"		"21"
+		"AttributeAgilityGain"		"2.0"
+		"AttributeBaseIntelligence" "10"
+		"AttributeIntelligenceGain" "2.0"
+		"MovementSpeed"				"300"
+		"Ability1"					"windrunner_powershot"
+		"Ability2"					"windrunner_windrun"
+		"Ability3"					"tusk_snowball"
+		"Ability4"					"tinker_march_of_the_machines"
+	}
+	//英雄-TK
+	"npc_dota_hero_tinker_new"
+	{
+		"override_hero"				"npc_dota_hero_tinker"
+		"AttackDamageMin"			"25"		// Damage range min.
+		"AttackDamageMax"			"45"		// Damage range max.
+		"AttackRate"				"1.8"
+		"AttributeBaseStrength"		"11"
+		"AttributeStrengthGain"		"2"
+		"AttributeBaseAgility"		"14"
+		"AttributeAgilityGain"		"1"
+		"AttributeBaseIntelligence" "15"
+		"AttributeIntelligenceGain" "2"
+		"MovementSpeed"				"305"
+		"Ability1"					"magnataur_shockwave"
+		//"Ability1"					"boss_test"
+		"Ability2"					"crystal_maiden_crystal_nova"
+		"Ability3"					"meteor"
+		"Ability4"					"black_chaos"
+	}
+	//英雄-戴泽
+	"npc_dota_hero_dazzle_new"
+	{
+		"override_hero"				"npc_dota_hero_dazzle"
+		"AttackDamageMin"			"1"		// Damage range min.
+		"AttackDamageMax"			"70"		// Damage range max.
+		"AttackRate"				"1.7"
+		"AttributeBaseStrength"		"12"
+		"AttributeStrengthGain"		"1.7"
+		"AttributeBaseAgility"		"10"
+		"AttributeAgilityGain"		"1.0"
+		"AttributeBaseIntelligence" "18"
+		"AttributeIntelligenceGain" "2.3"
+		"MovementSpeed"				"295"
+		"Ability1"					"rubick_fade_bolt"
+		"Ability2"					"omniknight_purification"
+		"Ability4"					"ogre_magi_bloodlust"
+	}
+}

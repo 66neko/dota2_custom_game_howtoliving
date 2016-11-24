@@ -1,0 +1,974 @@
+// Dota Heroes File
+"DOTAAbilities"
+{
+	"Version"		"1"
+
+	"item_blink"			"REMOVE"
+	"item_blades_of_attack"			"REMOVE"
+	"item_broadsword"			"REMOVE"
+	"item_chainmail"			"REMOVE"
+	//"item_claymore"			"REMOVE"
+	"item_helm_of_iron_will"			"REMOVE"
+	//"item_javelin"			"REMOVE"
+	//"item_mithril_hammer"			"REMOVE"
+	"item_platemail"			"REMOVE"
+	"item_quarterstaff"			"REMOVE"
+	"item_quelling_blade"			"REMOVE"
+	"item_ring_of_protection"			"REMOVE"
+	"item_stout_shield"			"REMOVE"
+	"item_gauntlets"			"REMOVE"
+	"item_slippers"			"REMOVE"
+	"item_mantle"			"REMOVE"
+	"item_branches"			"REMOVE"
+	"item_belt_of_strength"			"REMOVE"
+	"item_boots_of_elves"			"REMOVE"
+	"item_robe"			"REMOVE"
+	"item_circlet"			"REMOVE"
+	"item_ogre_axe"			"REMOVE"
+	"item_blade_of_alacrity"			"REMOVE"
+	"item_staff_of_wizardry"			"REMOVE"
+	//"item_ultimate_orb"			"REMOVE"
+	"item_gloves"			"REMOVE"
+	"item_lifesteal"			"REMOVE"
+	"item_ring_of_regen"			"REMOVE"
+	"item_sobi_mask"			"REMOVE"
+	//"item_boots"			"REMOVE"
+	"item_gem"			"REMOVE"
+	"item_cloak"			"REMOVE"
+	"item_talisman_of_evasion"			"REMOVE"
+	"item_cheese"			"REMOVE"
+	"item_magic_stick"			"REMOVE"
+	"item_recipe_magic_wand"			"REMOVE"
+	"item_magic_wand"			"REMOVE"
+	"item_ghost"			"REMOVE"
+	"item_clarity"			"REMOVE"
+	"item_flask"			"REMOVE"
+	"item_dust"			"REMOVE"
+	"item_bottle"			"REMOVE"
+	"item_ward_observer"			"REMOVE"
+	"item_ward_sentry"			"REMOVE"
+	"item_tango"			"REMOVE"
+	"item_tango_single"			"REMOVE"
+	"item_courier"			"REMOVE"
+	"item_tpscroll"			"REMOVE"
+	"item_recipe_travel_boots"			"REMOVE"
+	//"item_travel_boots"			"REMOVE"
+	"item_recipe_phase_boots"			"REMOVE"
+	//"item_phase_boots"			"REMOVE"
+	"item_demon_edge"			"REMOVE"
+	"item_eagle"			"REMOVE"
+	"item_reaver"			"REMOVE"
+	"item_relic"			"REMOVE"
+	"item_hyperstone"			"REMOVE"
+	"item_ring_of_health"			"REMOVE"
+	"item_void_stone"			"REMOVE"
+	"item_mystic_staff"			"REMOVE"
+	"item_energy_booster"			"REMOVE"
+	"item_point_booster"			"REMOVE"
+	"item_vitality_booster"			"REMOVE"
+	"item_recipe_power_treads"			"REMOVE"
+	"item_power_treads"			"REMOVE"
+	"item_recipe_hand_of_midas"			"REMOVE"
+	"item_hand_of_midas"			"REMOVE"
+	"item_recipe_oblivion_staff"			"REMOVE"
+	"item_oblivion_staff"			"REMOVE"
+	"item_recipe_pers"			"REMOVE"
+	"item_pers"			"REMOVE"
+	"item_recipe_poor_mans_shield"			"REMOVE"
+	"item_poor_mans_shield"			"REMOVE"
+	"item_recipe_bracer"			"REMOVE"
+	"item_bracer"			"REMOVE"
+	"item_recipe_wraith_band"			"REMOVE"
+	"item_wraith_band"			"REMOVE"
+	"item_recipe_null_talisman"			"REMOVE"
+	"item_null_talisman"			"REMOVE"
+	"item_recipe_mekansm"			"REMOVE"
+	"item_mekansm"			"REMOVE"
+	"item_recipe_vladmir"			"REMOVE"
+	"item_vladmir"			"REMOVE"
+	"item_flying_courier"			"REMOVE"
+	"item_recipe_buckler"			"REMOVE"
+	"item_buckler"			"REMOVE"
+	"item_recipe_ring_of_basilius"			"REMOVE"
+	"item_ring_of_basilius"			"REMOVE"
+	"item_recipe_pipe"			"REMOVE"
+	"item_pipe"			"REMOVE"
+	"item_recipe_urn_of_shadows"			"REMOVE"
+	"item_urn_of_shadows"			"REMOVE"
+	"item_recipe_headdress"			"REMOVE"
+	"item_headdress"			"REMOVE"
+	"item_recipe_sheepstick"			"REMOVE"
+	"item_sheepstick"			"REMOVE"
+	"item_recipe_orchid"			"REMOVE"
+	"item_orchid"			"REMOVE"
+	"item_recipe_cyclone"			"REMOVE"
+	"item_cyclone"			"REMOVE"
+	"item_recipe_force_staff"			"REMOVE"
+	"item_force_staff"			"REMOVE"
+	"item_recipe_dagon"			"REMOVE"
+	"item_recipe_dagon_2"			"REMOVE"
+	"item_recipe_dagon_3"			"REMOVE"
+	"item_recipe_dagon_4"			"REMOVE"
+	"item_recipe_dagon_5"			"REMOVE"
+	"item_dagon"			"REMOVE"
+	"item_dagon_2"			"REMOVE"
+	"item_dagon_3"			"REMOVE"
+	"item_dagon_4"			"REMOVE"
+	"item_dagon_5"			"REMOVE"
+	"item_recipe_necronomicon"			"REMOVE"
+	"item_recipe_necronomicon_2"			"REMOVE"
+	"item_recipe_necronomicon_3"			"REMOVE"
+	"item_necronomicon"			"REMOVE"
+	"item_necronomicon_2"			"REMOVE"
+	"item_necronomicon_3"			"REMOVE"
+	"item_recipe_ultimate_scepter"			"REMOVE"
+	"item_ultimate_scepter"			"REMOVE"
+	"item_recipe_refresher"			"REMOVE"
+	"item_refresher"			"REMOVE"
+	"item_recipe_assault"			"REMOVE"
+	"item_assault"			"REMOVE"
+	"item_recipe_heart"			"REMOVE"
+	"item_heart"			"REMOVE"
+	"item_recipe_black_king_bar"			"REMOVE"
+	"item_black_king_bar"			"REMOVE"
+	"item_aegis"			"REMOVE"
+	"item_recipe_shivas_guard"			"REMOVE"
+	"item_shivas_guard"			"REMOVE"
+	"item_recipe_bloodstone"			"REMOVE"
+	"item_bloodstone"			"REMOVE"
+	"item_recipe_sphere"			"REMOVE"
+	"item_sphere"			"REMOVE"
+	"item_recipe_reflex_energy_regen_booster"			"REMOVE"
+	"item_vanguard"			"REMOVE"
+	"item_recipe_blade_mail"			"REMOVE"
+	"item_blade_mail"			"REMOVE"
+	"item_recipe_soul_booster"			"REMOVE"
+	"item_soul_booster"			"REMOVE"
+	"item_recipe_hood_of_defiance"			"REMOVE"
+	"item_hood_of_defiance"			"REMOVE"
+	"item_recipe_rapier"			"REMOVE"
+	"item_rapier"			"REMOVE"
+	"item_recipe_monkey_king_bar"			"REMOVE"
+	"item_monkey_king_bar"			"REMOVE"
+	"item_recipe_radiance"			"REMOVE"
+	"item_radiance"			"REMOVE"
+	"item_recipe_butterfly"			"REMOVE"
+	"item_butterfly"			"REMOVE"
+	"item_recipe_greater_crit"			"REMOVE"
+	"item_greater_crit"			"REMOVE"
+	"item_recipe_basher"			"REMOVE"
+	"item_basher"			"REMOVE"
+	"item_recipe_bfury"			"REMOVE"
+	"item_bfury"			"REMOVE"
+	"item_recipe_manta"			"REMOVE"
+	"item_manta"			"REMOVE"
+	"item_recipe_lesser_crit"			"REMOVE"
+	"item_lesser_crit"			"REMOVE"
+	"item_recipe_armlet"			"REMOVE"
+	"item_armlet"			"REMOVE"
+	"item_recipe_invis_sword"			"REMOVE"
+	"item_invis_sword"			"REMOVE"
+	"item_recipe_sange_and_yasha"			"REMOVE"
+	"item_sange_and_yasha"			"REMOVE"
+	"item_recipe_satanic"			"REMOVE"
+	"item_satanic"			"REMOVE"
+	"item_recipe_mjollnir"			"REMOVE"
+	"item_mjollnir"			"REMOVE"
+	"item_recipe_skadi"			"REMOVE"
+	"item_skadi"			"REMOVE"
+	"item_recipe_sange"			"REMOVE"
+	"item_sange"			"REMOVE"
+	"item_recipe_helm_of_the_dominator"			"REMOVE"
+	"item_helm_of_the_dominator"			"REMOVE"
+	"item_recipe_maelstrom"			"REMOVE"
+	"item_maelstrom"			"REMOVE"
+	"item_recipe_desolator"			"REMOVE"
+	//"item_desolator"			"REMOVE"
+	"item_recipe_yasha"			"REMOVE"
+	"item_yasha"			"REMOVE"
+	"item_recipe_mask_of_madness"			"REMOVE"
+	"item_mask_of_madness"			"REMOVE"
+	"item_recipe_diffusal_blade"			"REMOVE"
+	"item_recipe_diffusal_blade_2"			"REMOVE"
+	"item_diffusal_blade"			"REMOVE"
+	"item_diffusal_blade_2"			"REMOVE"
+	"item_recipe_ethereal_blade"			"REMOVE"
+	"item_ethereal_blade"			"REMOVE"
+	"item_recipe_soul_ring"			"REMOVE"
+	"item_soul_ring"			"REMOVE"
+	"item_recipe_arcane_boots"			"REMOVE"
+	"item_arcane_boots"			"REMOVE"
+	"item_orb_of_venom"			"REMOVE"
+	"item_recipe_ancient_janggo"			"REMOVE"
+	"item_ancient_janggo"			"REMOVE"
+	"item_recipe_medallion_of_courage"			"REMOVE"
+	"item_medallion_of_courage"			"REMOVE"
+	"item_smoke_of_deceit"			"REMOVE"
+	"item_recipe_veil_of_discord"			"REMOVE"
+	"item_veil_of_discord"			"REMOVE"
+	"item_recipe_rod_of_atos"			"REMOVE"
+	"item_rod_of_atos"			"REMOVE"
+	"item_recipe_abyssal_blade"			"REMOVE"
+	"item_abyssal_blade"			"REMOVE"
+	"item_recipe_heavens_halberd"			"REMOVE"
+	"item_heavens_halberd"			"REMOVE"
+	"item_recipe_ring_of_aquila"			"REMOVE"
+	"item_ring_of_aquila"			"REMOVE"
+	"item_recipe_tranquil_boots"			"REMOVE"
+	"item_tranquil_boots"			"REMOVE"
+	"item_shadow_amulet"			"REMOVE"
+  	"item_halloween_candy_corn"			"REMOVE"
+	"item_mystery_hook"			"REMOVE"
+	"item_mystery_arrow"			"REMOVE"
+	"item_mystery_missile"			"REMOVE"
+	"item_mystery_toss"			"REMOVE"
+	"item_mystery_vacuum"			"REMOVE"
+	"item_halloween_rapier"			"REMOVE"
+	"item_greevil_whistle"			"REMOVE"
+	"item_greevil_whistle_toggle"			"REMOVE"
+	"item_present"			"REMOVE"
+	"item_winter_stocking"			"REMOVE"
+	"item_winter_skates"			"REMOVE"
+	"item_winter_cake"			"REMOVE"
+	"item_winter_cookie"			"REMOVE"
+	"item_winter_coco"			"REMOVE"
+	"item_winter_ham"			"REMOVE"
+	"item_winter_kringle"			"REMOVE"
+	"item_winter_mushroom"			"REMOVE"
+	"item_winter_greevil_treat"			"REMOVE"
+	"item_winter_greevil_garbage"			"REMOVE"
+	"item_winter_greevil_chewy"			"REMOVE"
+
+	//==================================重写速度之靴============================================
+	"item_boots"
+	{
+		"SideShop"				"0"
+		"SecretShop"				"0"
+		"ItemPurchasable"				"0" //不可被购买
+		"ItemCost"				"200"
+		"ItemShareability"         "ITEM_FULLY_SHAREABLE" //共享物品-关键
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_movement_speed"	"40"
+			}
+		}
+	}
+	//重写合成球（极限法球）
+	"item_ultimate_orb"
+	{
+		"SideShop"				"0"
+		"SecretShop"				"1"
+		"ItemCost"				"3800"
+		"ItemShareability"         "ITEM_FULLY_SHAREABLE" //共享物品-关键
+	}
+	//重写武器-减防-秘银锤lv1
+	"item_mithril_hammer"
+	{
+		"SideShop"				"1"
+		"SecretShop"			"0"
+		"ItemPurchasable"				"0" //不可被购买
+		"ItemCost"				"200"
+		"ItemShareability"         "ITEM_FULLY_SHAREABLE"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_damage"			"30"
+			}
+		}
+	}
+	//重写武器-减防-暗灭lv2
+	"item_desolator"
+	{
+		"SideShop"				"1"
+		"SecretShop"			"0"
+		"ItemPurchasable"				"0" //不可被购买
+		"ItemCost"				"200"
+		"ItemShareability"         "ITEM_FULLY_SHAREABLE"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_damage"			"30"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"corruption_armor"		"-8"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"corruption_duration"	"15.0"
+			}
+		}
+	}
+	//物品-武器-减防-暗灭lv2-合成符
+	"item_recipe_desolator"
+	{
+		//"BaseClass"						"item_datadriven"
+		//"ID"							"2002"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"AbilityTextureName"			"item_recipe"
+		"ItemShareability"         "ITEM_FULLY_SHAREABLE"
+	
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+	
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_desolator"
+		"ItemRequirements"
+		{
+			"01"						"item_mithril_hammer;item_mithril_hammer"
+		}
+	}
+	//重写武器-分裂-大剑lv1
+	"item_claymore"
+	{
+		"SideShop"				"0"
+		"SecretShop"			"0"
+		"ItemPurchasable"				"0" //不可被购买
+		"ItemCost"				"200"
+		"ItemShareability"         "ITEM_FULLY_SHAREABLE"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_damage"			"20"
+			}
+		}
+	}
+	//重写武器-多重攻击-标枪lv1
+	"item_javelin"
+	{
+		"SideShop"				"0"
+		"SecretShop"			"0"
+		"ItemPurchasable"				"0" //不可被购买
+		"ItemCost"				"200"
+		"ItemShareability"         "ITEM_FULLY_SHAREABLE"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_damage"			"20"
+			}
+		}
+	}
+	//重写飞鞋-移速传送鞋lv2
+	"item_travel_boots"
+	{
+		"SideShop"				"0"
+		"SecretShop"				"0"
+		"ItemPurchasable"				"0" //不可被购买
+		"ItemCost"				"200"
+		"ItemShareability"         "ITEM_FULLY_SHAREABLE" //共享物品-关键
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_movement_speed"	"80"
+			}
+		}
+	}
+	//重写飞鞋-移速传送鞋lv3
+	"item_travel_boots_2"
+	{
+		"SideShop"				"0"
+		"SecretShop"				"0"
+		"ItemPurchasable"				"0" //不可被购买
+		"ItemCost"				"200"
+		"ItemShareability"         "ITEM_FULLY_SHAREABLE" //共享物品-关键
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_movement_speed"	"100"
+			}
+		}
+	}
+	//重写相位鞋-攻击闪烁鞋lv2
+	"item_phase_boots"
+	{
+		"SideShop"				"0"
+		"SecretShop"				"0"
+		"ItemPurchasable"				"0" //不可被购买
+		"ItemCost"				"200"
+		"ItemShareability"         "ITEM_FULLY_SHAREABLE" //共享物品-关键
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"phase_duration"			"4.0"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"phase_movement_speed"  	"16"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_movement_speed"		"40"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"				"25"
+			}
+		}
+	}
+		//物品-鞋子-移速传送lv2-合成符
+	"item_recipe_travel_boots"
+	{
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"AbilityTextureName"			"item_recipe"
+		"ItemShareability"         "ITEM_FULLY_SHAREABLE"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+	
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_travel_boots"
+		"ItemRequirements"
+		{
+			"01"						"item_boots;item_boots"
+		}
+	}
+	//物品-鞋子-移速传送lv3-合成符
+	"item_recipe_travel_boots_2"
+	{
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"AbilityTextureName"			"item_recipe"
+		"ItemShareability"         "ITEM_FULLY_SHAREABLE"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+	
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_travel_boots_2"
+		"ItemRequirements"
+		{
+			"01"						"item_travel_boots;item_travel_boots"
+		}
+	}
+	//物品-鞋子-攻击相位lv2-合成符
+	"item_recipe_phase_boots"
+	{
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"AbilityTextureName"			"item_recipe"
+		"ItemShareability"         "ITEM_FULLY_SHAREABLE"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+	
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_phase_boots"
+		"ItemRequirements"
+		{
+			"01"						"item_boots;item_javelin"
+		}
+	}
+
+	//技能重写--------------------------------------------
+	//重写-技能-剑刃风暴
+	"juggernaut_blade_fury"
+	{
+		"AbilityCooldown"				"40 35 30 25"
+		"AbilityDamage"					"40 120 320 600"
+		"AbilityManaCost"				"60 120 180 240"
+		"MaxLevel"						"4"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"9"
+	}
+	//重写-技能-赏金隐身
+	"bounty_hunter_wind_walk"
+	{
+		"AbilityCooldown"				"40 39 37 35"
+		"AbilityManaCost"				"30 60 100 150"
+		"MaxLevel"						"4"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"9"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"duration"					"5.0 6.0 7.0 8.0"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"fade_time"					"1.0 0.75 0.5 0.25"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_damage"				"200 600 1600 3000"
+			}
+		}
+	}
+	//重写-技能-剑舞
+	"juggernaut_blade_dance"
+	{
+		"MaxLevel"						"4"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"9"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"blade_dance_crit_mult"		"225 295 375 450"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"blade_dance_crit_chance"	"10 10 10 10"
+			}
+		}
+	}
+	//重写-技能-娜迦镜像
+	"naga_siren_mirror_image"
+	{
+		"AbilityCooldown"				"90 88 85 80"
+		"AbilityManaCost"				"120 150 200 275"
+		"MaxLevel"						"3"
+		"RequiredLevel"					"10"
+		"LevelsBetweenUpgrades"			"10"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"illusion_duration"			"20.0 25.0 30.0 30.0"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"outgoing_damage"			"-81 -77 -73"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"outgoing_damage_tooltip"	"19 23 27"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"incoming_damage"			"350 300 250"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"tooltip_incoming_damage_total_pct"			"450 400 350"
+			}
+			"06"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"images_count"				"3 4 5"
+			}
+			"07"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"invuln_duration"			"0.3"
+			}			
+		}
+	}
+	//重写-技能-斧王吼
+	"axe_berserkers_call"
+	{
+		"AbilityCooldown"				"16 13 10 6"
+		"AbilityManaCost"				"10 50 100 180"
+		"MaxLevel"						"4"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"9"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+
+				"radius"				"300"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_armor"			"5 12 22 40"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"2.0 2.4 2.9 3.5"
+			}	
+		}
+	}
+	//重写-技能-斧王转
+	"axe_counter_helix"
+	{
+		"MaxLevel"						"4"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"9"
+		"AbilityDamage"					"50 150 400 750"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"radius"					"275"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"trigger_chance"			"15 17 20 25"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"cooldown"					"2.00 1.75 1.35 1.00"
+			}
+		}
+	}
+	//重写-技能-龙骑龙族血统
+	"dragon_knight_dragon_blood"
+	{
+		"MaxLevel"						"4"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"9"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_health_regen"		"5 11 17 24"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_armor"				"7 10 14 20"
+			}
+		}
+	}
+	//重写-技能-抄袭大
+	"tidehunter_ravage"
+	{
+		"AbilityCooldown"				"90.0 85.0 80.0"
+		"MaxLevel"						"3"
+		"RequiredLevel"					"10"
+		"LevelsBetweenUpgrades"			"10"
+		"AbilityDamage"					"800 1790 2880"
+		"AbilityManaCost"				"150 275 425"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"radius"			"1025"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"speed"				"600"
+			}
+			"03"
+			{	
+				"var_type"			"FIELD_FLOAT"
+				"duration"			"3.02 5.32 7.57"
+			}
+		}
+	}
+	//重写-技能-风行风步
+	"windrunner_windrun"
+	{
+		"AbilityCooldown"				"30.0 26.0 22.0 18.0"
+		"MaxLevel"						"4"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"9"
+		"AbilityDuration"				"3 5 7 9"
+		"AbilityManaCost"				"20 70 170 370"
+	}
+	//重写-技能-风行强力击
+	"windrunner_powershot"
+	{
+		"AbilityCooldown"				"10.0 11.0 12.0 13.0"
+		"MaxLevel"						"4"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"9"
+		"AbilityDamage"					"120 360 960 1800"
+		"AbilityManaCost"				"90 150 250 325"
+	}
+	//重写-技能-雪球
+	"tusk_snowball"
+	{
+		"AbilityCooldown"				"20.0"
+		"MaxLevel"						"4"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"9"
+		"AbilityManaCost"				"85 105 135 155"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"snowball_damage"			"60 180 480 900"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"snowball_speed"			"675"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"snowball_damage_bonus"		"20 30 40 50"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"stun_duration"				"0.5 1.25 2.0 2.75"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"snowball_windup_radius"	"100"
+			}
+			"06"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"snowball_duration"			"3.5"
+			}
+			"07"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"snowball_radius"			"200"
+			}			
+			"08"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"snowball_grow_rate"		"40"
+			}
+			"09"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"snowball_windup"			"0.5"
+			}
+		}
+	}
+	//重写-技能-TK机器人
+	"tinker_march_of_the_machines"
+	{
+		"AbilityCooldown"				"70.0"
+		"MaxLevel"						"3"
+		"RequiredLevel"					"10"
+		"LevelsBetweenUpgrades"			"10"
+		"AbilityDamage"					"200 425 725"
+		"AbilityManaCost"				"200 350 550"
+	}
+	//重写-技能-猛犸波
+	"magnataur_shockwave"
+	{
+		"AbilityCooldown"				"10.0 8.5 6.5 4.0"
+		"MaxLevel"						"4"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"9"
+		"AbilityManaCost"				"60 110 170 245"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"shock_speed"				"1050"
+			}
+			
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"shock_width"				"150"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"shock_distance"			"1150"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"shock_damage"				"100 300 800 1500"
+			}
+		}
+	}
+	//重写-技能-冰女nava
+	"crystal_maiden_crystal_nova"
+	{
+		"AbilityCooldown"				"15.0 13.0 10.5 6.0"
+		"MaxLevel"						"4"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"9"
+		"AbilityManaCost"				"50 100 150 225"
+		"AbilityDamage"					"80 240 640 1200"
+	}
+	//重写-技能-拉比克弱化能流
+	"rubick_fade_bolt"
+	{
+		"AbilityCooldown"				"16.0 15.0 13.5 12.0"
+		"MaxLevel"						"4"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"9"
+		"AbilityManaCost"				"60 100 170 245"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"damage"					"70 210 560 1050"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"jump_damage_reduction_pct"	"4 4 4 4"
+			}
+			"03"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"hero_attack_damage_reduction"	"15 30 50 65"
+			}
+			"04"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"creep_attack_damage_reduction"	"15 30 50 70"
+			}			
+			"05"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"duration"					"5.0 5.5 6.0 7.0"
+			}
+			"06"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"radius"					"440"
+			}			
+			"07"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"jump_delay"				"0.25 0.24 0.23 0.22"
+			}
+		}
+	}
+	//重写-技能-戴泽暗影波
+	"dazzle_shadow_wave"
+	{
+		"AbilityCooldown"				"13.0 12.0 10.0 7.0"
+		"MaxLevel"						"4"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"9"
+		"AbilityManaCost"				"50 90 130 185"
+		"AbilityDamage"					"50 150 400 775"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bounce_radius"		"405"
+			}
+			"02"
+			{	
+				"var_type"			"FIELD_INTEGER"
+				"damage_radius"		"155"
+			}
+			"03"
+			{	
+				"var_type"			"FIELD_INTEGER"
+				"max_targets"		"2 3 4 5"
+			}
+			"04"
+			{	
+				"var_type"			"FIELD_INTEGER"
+				"tooltip_max_targets_inc_dazzle"		"3 4 5 6"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage"			"50 150 400 775"
+			}
+		}
+	}
+	//重写-技能-全能加血
+	"omniknight_purification"
+	{
+		"AbilityCooldown"				"20.0 18.0 16.5 15.0"
+		"MaxLevel"						"4"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"9"
+		"AbilityManaCost"				"100 175 250 400"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"heal"					"150 450 1000 1900"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"250"
+			}
+		}
+	}
+	//重写-技能-嗜血术
+	"ogre_magi_bloodlust"
+	{
+		"AbilityCooldown"				"30.0"
+		"MaxLevel"						"3"
+		"RequiredLevel"					"10"
+		"LevelsBetweenUpgrades"			"10"
+		"AbilityManaCost"				"75 150 250"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"duration"			"19 21 23"
+			}
+
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"modelscale"		"25"
+			}	
+
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_movement_speed"		"10 19 27"
+			}
+
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_attack_speed"	"55 105 170"
+			}
+		}
+	}
+}
